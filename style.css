@@ -1,0 +1,68 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.box-1{
+    border: 2px solid brown;
+    width: 400px;
+    height: 200px;
+    border-radius: 5px;
+    margin: 50px auto 10px auto;
+}
+.box-1 p{
+    line-height: 200px;
+    font-size: 20px;
+}
+.box-2{
+    margin-bottom: 30px;
+}
+.box-2 p{
+    font-size: 100px;
+}
+.box-3 input{
+    padding: 5px 50px;
+    border: 2px solid burlywood;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    outline: none;
+}
+.box-3 button{
+    padding: 20px 70px;
+    background-color: antiquewhite;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px grey;
+    transition: all 0.3;
+}
+.box-3 button:hover{
+    background-color: burlywood;
+}
+.box-3 button:active{
+    box-shadow: none;
+}
+
+
+
+
+.time{
+    font-size: 40px;
+}
+.btn button{
+    padding: 5px;
+    margin: 0 5px;
+    font-size: 16px;
+}
+
+
+.btn_display{
+    padding: 5px;
+    font-size: 16px;
+    margin: 10px 0px;
+}

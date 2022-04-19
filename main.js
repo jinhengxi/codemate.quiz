@@ -67,3 +67,44 @@ btnDisplay.addEventListener('click',()=>{
     count = 0;
   }
 })
+
+
+
+
+const movies = [
+  {
+    title : '인셉션',
+    year : 2010,
+    content : '액션/SF'
+  },
+  {
+    title : '인터스텔라',
+    year : 2014,
+    content : 'SF'
+  },
+  {
+    title : '말할수없는비밀',
+    year : 2007,
+    content : '판타지'
+  }
+]
+
+const movieBtn = document.querySelectorAll('.movie_btn');
+const movieTitle = document.querySelector('.movie_title');
+const movieYear = document.querySelector('.movie_year');
+const movieContent = document.querySelector('.movie_content');
+
+for(let i = 0; i < movieBtn.length; i++){
+  movieBtn[i].onclick = ()=>{
+      movieTitle.innerText = movies[i].title
+      movieYear.innerText = movies[i].year
+      movieContent.innerText = movies[i].content
+  }
+}
+
+
+
+
+    // movieTitle.innerText = movies[i].title
+    // movieYear.innerText = movies[i].year
+    // movieContent.innerText = movies[i].content

@@ -66,3 +66,13 @@
     font-size: 16px;
     margin: 10px 0px;
 }
+
+.movie_btn{
+    padding: 5px;
+    font-size: 16px;
+    margin: 10px 0px;
+}
+.movie_container{
+    text-align: center;
+    margin-bottom: 50px;
+}

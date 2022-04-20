@@ -105,6 +105,132 @@ for(let i = 0; i < movieBtn.length; i++){
 
 
 
-    // movieTitle.innerText = movies[i].title
-    // movieYear.innerText = movies[i].year
-    // movieContent.innerText = movies[i].content
+const callName = document.querySelector('.call_name');
+const callBtn = document.querySelector('.call_btn');
+
+function call(){
+    callName.innerHTML = '스펀지밥';
+    callBtn.innerHTML = '010-1234-5678';
+}
+
+callBtn.addEventListener('click',()=>{
+  callBtn.innerHTML = '전화거는중...';
+})
+
+callBtn.addEventListener('click',()=>{
+  setTimeout(call,2000);
+})
+
+
+
+
+
+
+
+
+//챗봇만들기
+const body = document.getElementById('body');
+const chat = document.querySelector('.box-1');
+const chatInput = document.querySelector('.chat_input');
+const chatBtn = document.querySelector('.chat_btn');
+var question = '';
+var answer = '';
+var key = 0;
+
+var json = 
+[
+  {
+    'question' : '안녕',
+    'answer' : 'ㅎㅇ!'
+  },
+  {
+    'question' : '나이',
+    'answer' : '비밀~'
+  },
+  {
+    'question' : '이름',
+    'answer' : '스펀지밥!'
+  }
+]
+
+chatBtn.addEventListener('click',()=>{ 
+    value = chatInput.value;
+
+    if(key == 1){
+      if(value == 'Yes'){
+        chat.innerHTML = '대답을 입력해주셈!'
+        key = 2;
+      }else{
+        chat.innerText = '?!'
+        key = 0;
+      }
+      return;
+    }if(key == 2){
+      answer = value;
+      push_json()
+      return;
+    }
+
+  for(let i = 0; i < json.length; i++){
+    if(value === json[i].question){
+      chat.innerText = json[i].answer;
+      return;
+    }
+  }
+
+  chat.innerText = value+'??? 대답 가르쳐 주셈!(Yes or No)'
+  question = value;
+  key = 1;
+
+ })
+
+ function push_json(){
+   json.push( { question : `${question}`, answer : `${answer}` } );
+   console.log(json)
+   chat.innerHTML = '습득완료'
+   key = 0;
+ }
+ 
+
+
+
+//불끄고 켜기, 말따라하기
+// let light =0;
+// let follow = 0;
+
+// chatBtn.addEventListener('click',()=>{
+//   chatInput.focus();
+//   let monkey = chatInput.value;
+//   if(monkey === '불꺼줘'){
+//     if(light==0){
+//       chat.innerText = '불꺼줘 뀨ㅋ?';
+//       light++;
+//       follow = 0;
+//     }else if(light >= 1){
+//       chat.innerText = 'ㅇㅋㅇㅋ꺼드림 뀨ㅋ';
+//       body.style.cssText  = 'color: white; background-color: black';
+//     }
+//   }else if(monkey === '불켜줘'){
+//     chat.innerText = '켜드림 뀨ㅋ'
+//     body.style = '';
+//   }
+
+//   if(monkey == '따라해봐'){
+//     follow = 0;
+//     if(follow == 0){
+//       follow++;
+//       console.log(follow)
+//       chat.innerText = '쌉가능 뀨ㅋ'
+//     }
+//     }else if(follow >= 1){
+//       console.log(follow)
+//       console.log(monkey)
+//       chat.innerText = monkey + '뀨ㅋ'; 
+//       if(monkey == '그만해 뀨ㅋ'){
+//         chat.innerText = '뀨ㅋ'
+//         follow = 0;
+//       }
+//   }
+// })
+
+
